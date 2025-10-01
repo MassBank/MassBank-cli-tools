@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (C) 2017 MassBank consortium
+ * Copyright (C) 2025 MassBank consortium
  *
  * This file is part of MassBank.
  *
@@ -63,7 +63,7 @@ import java.util.stream.Stream;
  * @version 04-12-2024
  */
 public class Validator {
-    protected static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(Validator.class);
 	private static final Pattern nonStandardCharsPattern = Pattern.compile("[\\w\\n\\-\\[\\].\"\\\\ ;:–=+,|(){}/$%@'°!?#`^*&<>µáćÉéóäöü©]+");
 	private static RecordParser recordparser;
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (C) 2017 MassBank consortium
+ * Copyright (C) 2025 MassBank consortium
  *
  * This file is part of MassBank.
  *
@@ -53,7 +53,8 @@ import java.util.*;
  */
 public class RecordExporter {
     private static final Logger logger = LogManager.getLogger(RecordExporter.class);
-	
+
+
     public static void main(String[] arguments) {
         // load version and print
         Properties properties = ProjectPropertiesLoader.loadProperties();
