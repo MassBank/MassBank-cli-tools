@@ -53,8 +53,6 @@ import java.util.stream.Stream;
  *
  * Options:
  * --legacy   : less strict mode for legacy records with minor problems.
- * --db       : also read record from database and compare with original Record; Developer Feature!
- * --online   : also do online checks, like PubChem CID check.
  *
  * Example:
  * Validator --db records/
@@ -91,7 +89,7 @@ public class Validator {
 		Set<String> config = new HashSet<>();
 		config.add("validate");
 		if (cmd.hasOption("legacy")) config.add("legacy");
-		if (cmd.hasOption("online")) config.add("online");
+		//if (cmd.hasOption("online")) config.add("online");
 		recordparser = new RecordParser(config);
 
 		List<String> accessions = recordFiles.parallelStream()
@@ -120,7 +118,7 @@ public class Validator {
 	private static CommandLine parseCommandLine(String[] arguments) {
 		Options options = new Options();
 		options.addOption(null, "legacy", false, "less strict mode for legacy records with minor problems.");
-		options.addOption(null, "online", false, "also do online checks, like PubChem CID check.");
+		//options.addOption(null, "online", false, "also do online checks, like PubChem CID check.");
 
 		CommandLine cmd = null;
 		try {
@@ -295,6 +293,7 @@ public class Validator {
 			logger.error("Error in file {}.", result.filename());
 			logger.error("File content differs from generated record string.\nThis might be a code problem. Please Report!");
 			logSerializationError(originalRecordString, position);
+            logSerializationError(recordStringFromRecord, position);
 			return null;
 		}
         return result.record().ACCESSION();

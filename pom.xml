@@ -28,7 +28,7 @@
         <dependency>
             <groupId>io.github.massbank</groupId>
             <artifactId>massbank-lib</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.15</version>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>
@@ -131,7 +131,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.7.1</version>
                 <configuration>
-                    <outputDirectory>${project.basedir}/bin</outputDirectory>
+                    <outputDirectory>${project.basedir}/lib</outputDirectory>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -178,7 +178,7 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${project.basedir}/bin</directory>
+                            <directory>${project.basedir}/lib</directory>
                             <includes>
                                 <include>**/*.jar</include>
                             </includes>
