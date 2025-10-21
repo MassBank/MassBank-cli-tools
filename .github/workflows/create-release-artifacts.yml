@@ -23,8 +23,7 @@ jobs:
 
       - name: Prepare release folder
         run: |
-          VERSION="${{ github.event.release.tag_name }}"
-          FOLDER="MassBank-cli-tools-$VERSION"
+          FOLDER="MassBank-cli-tools"
           mkdir "$FOLDER"
           if [ -d bin ]; then
             cp -r bin "$FOLDER/"
@@ -36,7 +35,7 @@ jobs:
       - name: Archive release folder
         run: |
           VERSION="${{ github.event.release.tag_name }}"
-          zip -r "MassBank-cli-tools-$VERSION.zip" "MassBank-cli-tools-$VERSION"
+          zip -r "MassBank-cli-tools-$VERSION.zip" "MassBank-cli-tools"
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
